@@ -1,6 +1,5 @@
 package com.springboot.api.dto;
 
-// 예제 5.8
 public class MemberDto {
 
     private String name;
@@ -33,11 +32,6 @@ public class MemberDto {
 
     @Override
     public String toString() {
-        return "MemberDTO{" +
-            "name='" + name + '\'' +
-            ", email='" + email + '\'' +
-            ", organization='" + organization + '\'' +
-            '}';
+        return "MemberDto [name=" + name + ", email=" + email + ", organization=" + organization + "]";
     }
-
 }

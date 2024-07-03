@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/post-api")
 public class PostController {
 
-    // 예제 5.11
-    @RequestMapping(value = "/domain", method = RequestMethod.POST)
-    public String postExample(){
-        return "Hello Post API";
+    @RequestMapping(value = "domain", method = RequestMethod.POST)
+    public String postExample() {
+        return "Hello Post Api";
     }
 
-    // 예제 5.12
-    // http://localhost:8080/api/v1/post-api/member
+    //http://localhost:8080/api/v1/post-api/member
+    //@RequestBody와 Map을 활용한 Post Api 구현
     @PostMapping(value = "/member")
     public String postMember(@RequestBody Map<String, Object> postData) {
         StringBuilder sb = new StringBuilder();
@@ -32,16 +31,11 @@ public class PostController {
         return sb.toString();
     }
 
-
-    /*
-    param.forEach((key, value) -> sb.append(key).append(" : ").append(value).append("\n"));
-    */
-
-    // 예제 5.13
-    // http://localhost:8080/api/v1/post-api/member2
+    //http://localhost:8080/api/v1/post-api/member2
+    //DTO 객체를 활용한 Post Api 구현
     @PostMapping(value = "/member2")
-    public String postMemberDto(@RequestBody MemberDto memberDTO) {
-        return memberDTO.toString();
+    public String postMemberDto(@RequestBody MemberDto memberDto) {
+        return memberDto.toString();
     }
-
 }
+
